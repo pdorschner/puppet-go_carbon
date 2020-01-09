@@ -1,0 +1,5 @@
+---
+# RHEL needs rpm, because there is no repository available. So we need to download the binary from GitHub
+go_carbon::package_provider: rpm
+go_carbon::package_release: 1
+go_carbon::package_url: https://github.com/lomik/go-carbon/releases/download/v<%= @version %>/<%= @package_name %>-<%= @version %><% if @package_release %><%= -@package_release %><% end %>.<%= @arch %>.rpm

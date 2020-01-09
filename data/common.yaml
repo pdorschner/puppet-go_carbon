@@ -1,0 +1,97 @@
+---
+go_carbon::package_name: go-carbon
+go_carbon::version: 0.14.0
+go_carbon::conf_dir: /etc/go-carbon
+go_carbon::log_dir: /var/log/go-carbon
+go_carbon::user: carbon
+go_carbon::group: carbon
+
+go_carbon::download_path: /tmp
+
+go_carbon::ensure: running
+go_carbon::enable: true
+go_carbon::download_package: false
+go_carbon::manage_package: true
+
+go_carbon::graph_prefix: carbon.agents.{host}
+go_carbon::metric_endpoint: local
+go_carbon::metric_interval: 1m0s
+go_carbon::max_cpu: 4
+
+go_carbon::whisper_data_dir: /var/lib/graphite/whisper
+go_carbon::whisper_schemas_file: /etc/go-carbon/storage-schemas.conf
+go_carbon::whisper_aggregation_file: /etc/go-carbon/storage-aggregation.conf
+go_carbon::whisper_workers: 8
+go_carbon::whisper_max_updates_per_second: 0
+go_carbon::whisper_max_creates_per_second: 0
+go_carbon::whisper_hard_max_creates_per_second: false
+go_carbon::whisper_sparse_create: false
+go_carbon::whisper_flock: false
+go_carbon::whisper_flock_enabled: true
+go_carbon::whisper_hash_filenames: true
+
+go_carbon::cache_max_size: 1000000
+go_carbon::cache_write_strategy: max
+
+go_carbon::udp_enabled: true
+go_carbon::udp_port: 2003
+go_carbon::udp_buffer_size: 0
+
+go_carbon::tcp_enabled: true
+go_carbon::tcp_port: 2003
+go_carbon::tcp_buffer_size: 0
+
+go_carbon::pickle_enabled: true
+go_carbon::pickle_port: 2004
+go_carbon::pickle_max_message_size: 67108864
+go_carbon::pickle_buffer_size: 0
+
+go_carbon::carbonlink_enabled: true
+go_carbon::carbonlink_listen: 127.0.0.1:7002
+go_carbon::carbonlink_read_timeout: 30s
+
+go_carbon::grpc_enabled: true
+go_carbon::grpc_listen: 127.0.0.1:7003
+
+go_carbon::tags_enabled: true
+go_carbon::tagdb_url: http://127.0.0.1:8000
+go_carbon::tagdb_chunk_size: 32
+go_carbon::tagdb_update_interval: 100
+go_carbon::tagdb_local_dir: /var/lib/graphite/tagging/
+go_carbon::tagdb_timeout: 1s
+
+go_carbon::carbonserver_listen: 127.0.0.1:8080
+go_carbon::carbonserver_enabled: true
+go_carbon::carbonserver_buckets: 10
+go_carbon::carnonserver_metrics_as_counters: false
+go_carbon::carbonserver_read_timeout: 60s
+go_carbon::carbonserver_write_timeout: 60s
+go_carbon::carbonserver_query_cache_enabled: true
+go_carbon::carbonserver_query_cache_size_mb: 0
+go_carbon::carbonserver_find_cache_enabled: true
+go_carbon::carbonserver_trigram_index: true
+go_carbon::carbonserver_scan_frequency: 5m0s
+go_carbon::carbonserver_max_globs: 100
+go_carbon::carbonserver_fail_on_max_globs: false
+go_carbon::carbonserver_graphite_web_10_strict_mode : true
+go_carbon::carbonserver_internal_stats_dir: '' 
+go_carbon::carbonserver_stats_percentiles:
+  - 99
+  - 98
+  - 95
+  - 75
+  - 50
+go_carbon::dump_enabled: false
+go_carbon::dump_path: /var/lib/graphite/dump/
+go_carbon::dump_restore_per_second: 0
+
+go_carbon::pprof_listen: localhost:7007
+go_carbon::pprof_enabled: false
+
+go_carbon::logging_logger: '' 
+go_carbon::logging_file: /var/log/go-carbon/go-carbon.log
+go_carbon::logging_level: info
+go_carbon::logging_encoding: mixed
+go_carbon::logging_encoding_time: iso8601
+go_carbon::logging_duration: seconds
+

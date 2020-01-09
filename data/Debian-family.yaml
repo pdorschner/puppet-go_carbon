@@ -1,0 +1,5 @@
+---
+# Debian needs dpkg, because there is no repository available. So we need to download the binary from GitHub
+go_carbon::package_provider: dpkg
+go_carbon::package_release: ~
+go_carbon::package_url: https://github.com/lomik/go-carbon/releases/download/v<%= @version %>/<%= @package_name %>_<%= @version %>_<%= @arch %>.deb
