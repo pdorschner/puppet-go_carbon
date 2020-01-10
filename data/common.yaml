@@ -2,12 +2,19 @@
 go_carbon::package_name: go-carbon
 go_carbon::version: 0.14.0
 go_carbon::conf_dir: /etc/go-carbon
-go_carbon::log_dir: /var/log/go-carbon
+
+####TO DO
+#log_dir path not yet implemented
+#go_carbon::log_dir: /var/log/go-carbon
+
 go_carbon::user: carbon
-go_carbon::group: carbon
 go_carbon::download_path: /tmp
+
+####TO DO
+#service enabled not yet implemented
+#go_carbon::enable: true
 go_carbon::ensure: running
-go_carbon::enable: true
+
 go_carbon::download_package: false
 go_carbon::manage_package: true
 go_carbon::graph_prefix: carbon.agents.{host}
@@ -15,8 +22,12 @@ go_carbon::metric_endpoint: local
 go_carbon::metric_interval: 1m0s
 go_carbon::max_cpu: 4
 go_carbon::whisper_data_dir: /var/lib/graphite/whisper
+
+####TO DO redundant
 go_carbon::whisper_schemas_file: /etc/go-carbon/storage-schemas.conf
 go_carbon::whisper_aggregation_file: /etc/go-carbon/storage-aggregation.conf
+
+
 go_carbon::whisper_workers: 8
 go_carbon::whisper_max_updates_per_second: 0
 go_carbon::whisper_max_creates_per_second: 0
