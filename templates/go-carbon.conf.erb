@@ -2,7 +2,7 @@
 
 [common]
 # Run as user. Works only in daemon mode
-user = "<%= @user %>"
+user = "<%= scope['go_carbon::user'] %>"
 # Prefix for store all internal go-carbon graphs. Supported macroses: {host}
 graph-prefix = "<%= scope['go_carbon::graph_prefix'] %>"
 # Endpoint for store internal carbon metrics. Valid values: "" or "local", "tcp://host:port", "udp://host:port"

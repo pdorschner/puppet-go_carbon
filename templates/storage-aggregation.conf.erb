@@ -1,6 +1,6 @@
 ## managed by puppet
 
-#[default]
-#pattern = .*
-#xFilesFactor = 0.5
-#aggregationMethod = average
+[default]
+pattern = <%= scope['go_carbon::storage_aggregation_pattern'] %>
+xFilesFactor = <%= scope['go_carbon::storage_aggregation_xfilesfactor'] %>
+aggregationMethod = <%= scope['go_carbon::storage_aggregation_aggregationmethod'] %>

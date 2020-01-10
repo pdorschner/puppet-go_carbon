@@ -2,12 +2,13 @@
   "name": "pdorschner-go_carbon",
   "version": "0.1.0",
   "author": "Philipp Dorschner",
-  "summary": "",
+  "summary": "Go-Carbon Puppet Module",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "git://github.com/pdorschner/puppet-go_carbon",
   "dependencies": [
     {
-      "name": "puppetlabs/stdlib"
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 5.0.0 < 7.0.0"
     }
   ],
   "operatingsystem_support": [

@@ -1,5 +1,5 @@
 ## managed by puppet
 
-#[default]
-#pattern = .*
-#retentions = 60s:30d,1h:5y
+[default]
+pattern = <%= scope['go_carbon::storage_schemas_pattern'] %>
+retentions = <%= scope['go_carbon::storage_schemas_retentions'] %>
