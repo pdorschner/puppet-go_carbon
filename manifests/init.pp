@@ -17,10 +17,10 @@
 # @param download_path
 #   Specifies the destination of the downloaded package. Default value: '/tmp'.
 #
-# @param ensure
+# @param service_ensure
 #   Wheter the go-carbon service should be running. Default value: 'running'.
 #
-# @param enable
+# @param service_enable
 #   Wheter to enable the go-carbon service at boot. Default value: true.
 #
 # @param download_package
@@ -208,7 +208,8 @@
 #   Allows to keep track for "last time readed" between restarts, leave empty to disable. Default value: ''.
 #
 # @param carbonserver_stats_percentiles
-#   Calculate /render request time percentiles for the bucket, '95' means calculate 95th Percentile. To disable this feature, leave the list blank.
+#   Calculate /render request time percentiles for the bucket, '95' means calculate 95th Percentile.
+#   To disable this feature, leave the list blank.
 #   Default value: [99, 98, 95, 75, 50].
 #
 # @param dump_enabled
@@ -271,8 +272,8 @@ class go_carbon(
 
   Stdlib::Absolutepath $download_path,
 
-  Stdlib::Ensure::Service $ensure,
-  #Boolean $enable,
+  Stdlib::Ensure::Service $service_ensure,
+  Boolean $service_enable,
   Boolean $download_package,
   Boolean $manage_package,
 

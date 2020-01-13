@@ -7,6 +7,7 @@
 class go_carbon::install {
   $package_name     = $go_carbon::package_name
   $version          = $go_carbon::version
+  $package_release  = $go_carbon::package_release
   $package_url      = $go_carbon::package_url
   $arch             = $facts['os']['architecture']
   $manage_package   = $go_carbon::manage_package

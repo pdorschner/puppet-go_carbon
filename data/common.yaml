@@ -10,10 +10,8 @@ go_carbon::conf_dir: /etc/go-carbon
 go_carbon::user: carbon
 go_carbon::download_path: /tmp
 
-####TO DO
-#service enabled not yet implemented
-#go_carbon::enable: true
-go_carbon::ensure: running
+go_carbon::service_enable: true
+go_carbon::service_ensure: running
 
 go_carbon::download_package: false
 go_carbon::manage_package: true

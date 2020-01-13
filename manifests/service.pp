@@ -5,6 +5,11 @@
 #
 
 class go_carbon::service {
-  $ensure = $go_carbon::ensure
-  #$enable = $go_carbon::enable
+  $service_ensure = $go_carbon::service_ensure
+  $service_enable = $go_carbon::service_enable
+
+  service { $go_carbon::package_name :
+    ensure => $service_ensure,
+    enable => $service_enable,
+  }
 }
